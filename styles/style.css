@@ -28,6 +28,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-image: linear-gradient(to bottom right, darkslateblue, midnightblue, darkmagenta, orchid, aliceblue, lightgray);
 }
 
 section {
@@ -53,6 +54,68 @@ header {
     box-shadow: var(--shadow);
 }
 
+.calc-box {
+   border: 3px solid darkslategray;
+   border-radius: 20px;
+   padding: 1.5rem;
+   background-color:rgba(119, 136, 153, 0.6);
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: .5rem;
+    width: 4.5rem;
+    height: 2.5rem;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.display-box {
+    border: solid 2px darkslateblue;
+    border-radius: 20px; 
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: auto;
+    min-width: 5rem;
+    height: auto;
+    min-height: 3rem;
+    margin: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.operator {
+    margin: .5rem;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: darkslategray;
+    color: lightgray;
+    border: none;
+    border-radius: 15px;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.operator:hover {
+    color: aliceblue;
+}
+
+.operator:active {
+    color: lightgray;
+    background-color: slategray;
+}
+
+.operator:focus, input:focus {
+    outline: none;
+}
+
+
 footer {
     display: flex;
     justify-content: flex-end;
@@ -64,28 +127,17 @@ footer {
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
+    text-align: center;
+    color: rgba(211, 211, 211, 0.75);
+    text-shadow: rgba(47, 79, 79, .6) 1px 1px;
 }
 
 .gutter-right {
     margin-right: 20px;
 }
 
-.main-logo {
-    animation: pulse 5s infinite ease-in-out;
-}
-
 header img {
     height: var(--header-height);
-}
-
-
-
-content {
-    width: 80%;
-}
-
-p {
-    margin: var(--gutter);
 }
   
 footer {
@@ -98,22 +150,3 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-  
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
-
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
-
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
-  }
