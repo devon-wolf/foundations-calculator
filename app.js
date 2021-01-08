@@ -1,51 +1,39 @@
-// import functions and grab DOM elements
+import {
+    add,
+    subtract,
+    multiply,
+    divide,
+    getRemainder
+} from './mathUtils.js';
+
 const userInput1 = document.getElementById('input1');
 const userInput2 = document.getElementById('input2');
-
+const resultBox = document.getElementById('results');
 const calcButtons = document.getElementsByClassName('operator');
 
-const resultBox = document.getElementById('results');
-
-// initialize state
-
-// console.log(calcButtons); /* PASSED */
-// console.log(userInput1, userInput2, calcButton, resultBox); /* PASSED */
-
-// set event listeners to update state and DOM
-for (let calcButton of calcButtons) {
-    calcButton.addEventListener('click', () => {
-        // console.log('Hello world'); /* PASSED */
-    
+for (let button of calcButtons) {
+    button.addEventListener('click', () => {
         const value1 = userInput1.valueAsNumber;
         const value2 = userInput2.valueAsNumber;
-        
-        // console.log(value1, value2); /* PASSED */
-        // console.log(value1 + value2); /* PASSED */
-        
-        const sum = value1 + value2;
-        const diff = value1 - value2;
-        const product = value1 * value2;
-        const quotient = value1 / value2;
-        const remainder = value1 % value2;
-    
-        switch (calcButton.id) {
+
+        switch (button.id) {
             case '+':
-                resultBox.textContent = sum;
+                resultBox.textContent = add(value1, value2);
                 break;
             case '-':
-                resultBox.textContent = diff;
+                resultBox.textContent = subtract(value1, value2);
                 break;
             case '*':
-                resultBox.textContent = product;
+                resultBox.textContent = multiply(value1, value2);
                 break;
             case '/':
-                resultBox.textContent = quotient;
+                resultBox.textContent = divide(value1, value2);
                 break;
             case '%':
-                resultBox.textContent = remainder;
+                resultBox.textContent = getRemainder(value1, value2);
                 break;
             default:
-                resultBox.textContent = 'What did you even click?';
+                resultBox.textContent = 'Something went wrong...';
         }
     });
 }
